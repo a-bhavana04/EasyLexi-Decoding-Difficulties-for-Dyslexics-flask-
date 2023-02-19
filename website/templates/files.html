@@ -1,0 +1,16 @@
+{% extends "base4.html" %} {% block title %}Spell Check{% endblock %} {% block content %}
+
+    <form method="POST" enctype="multipart/form-data">
+            <section class="vh-100" >
+                <div class="container h-100" >
+                  <div class="row d-flex justify-content-center align-items-center" >
+                    <div class="col-lg-9 col-xl-9 mt-5">
+                        <h1 align="center">Spell Check<br>Please upload the pdf file</h1>
+                      <div class="card text-black mt-5" style="border-radius: 25px;background: #DFD3C3; padding: 1rem;">
+        <input type="file" name="file" accept="application/pdf" />
+        
+        </div>
+        <button class="btn btn-success w-30 mt-3 me-3 mb-3" >submit</button></div></div></div>
+
+    </form>
+{% endblock %}

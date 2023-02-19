@@ -1,0 +1,13 @@
+{% extends "base4.html" %} {% block title %}Spell Check{% endblock %} {% block content %}
+<section id = "txt" class="container-fluid px-0">
+    <div class="row align-items-center"><div id="headingGroup" class="text text-center d-flex flex-column align-items-center d-lg-block mt-5">
+    <h3 class="text-dark">Corrected Text</h3>
+      
+		<p style="background: #DFD3C3; letter-spacing: 0.1em; border: 1px solid #D7385E; padding: 10px; border-radius: 15px; height: 500px ;box-shadow: 0px 0px 5px 5px #D7385E;" >{{text}}</p>
+	</div>
+    <div align="center">
+        <a href="/"
+          ><button type="button" class="btn btn-lg btn-danger">Back</button></a>
+      </div>
+    </section>
+{% endblock %}

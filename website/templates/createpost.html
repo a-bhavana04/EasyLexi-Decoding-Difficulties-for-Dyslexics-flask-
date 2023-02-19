@@ -1,0 +1,20 @@
+{% extends "base3.html" %}
+{% block title %}Create post{% endblock %}
+{% block content %}
+<section id = "txt" class="container-fluid px-0">
+    <div class="row align-items-center"><div id="headingGroup" class="text text-center d-flex flex-column align-items-center d-lg-block mt-2">
+    <h1 class="text-dark">Create a Post</h1>
+    <form method="POST">
+    <textarea name="text" class="d-flex form-control text mb-3" id="textbox" cols="25" rows="15" placeholder="Type here..." style="background: #DFD3C3"></textarea>
+    <div align="center">
+        <button type="submit" class="btn btn-lg btn-success">Post</button>
+      </div>
+    </form>
+    <div align="center">
+        <a href="/home"
+          ><button type="button" class="btn btn-lg btn-danger">Back</button></a>
+      </div>
+    </div>
+    </div>
+    </section>
+{% endblock %}

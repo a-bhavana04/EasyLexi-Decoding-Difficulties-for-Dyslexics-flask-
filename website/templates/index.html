@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='styles/app.css') }}">
+    <link rel="icon" href="{{url_for('static', filename='styles/EL.jpeg')}}">
+    <title>EasyLexi</title>
+  </head>
+  
+  <body>
+    <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+        <div class="logo-image">
+            <img src="{{url_for('static', filename='styles/EL.jpeg')}}" class="img-fluid">
+      </div>
+      <a href="/" class="navbar-brand">EasyLexi</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navLinks">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a href="/" class="nav-link">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a href="/home" class="nav-link">BLOG</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Features
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background: #D7385E;">
+                    <a href="/spToText" class="nav-link">SPEECH-TO-TEXT</a>
+                    <a href="/textToSpeech" class="nav-link">TEXT-TO-SPEECH</a>
+                    <a href="/files" class="nav-link">SPELL CHECK</a>  
+              </li>
+          </ul>
+      </div>
+  </nav>
+  <section class="container-fluid px-0">
+    <div class="d-flex row align-items-center">
+      <div class="col-lg-6"><div id="headingGroup" class="text text-center d-flex flex-column align-items-center
+        d-lg-block mt-5">
+        <h1 class="">Word of the day</h1>
+        <blockquote>
+            <h1 id = "quotes" style="letter-spacing : 0.2em">Generate the word</h1>
+            </blockquote>            
+            <button id="start" onclick="newQuote()" class="btn btn-success w-30 mt-3 me-3 mb-3">Generate the word</button>
+
+            <button id="start" onclick="newL(word)" class="btn btn-success w-30 mt-3 me-3 mb-3">Pronounciation</button>
+    </div></div>
+      <div class="col-lg-6">
+        <img class="img-fluid" src="{{url_for('static', filename='styles/word.png')}}" alt=""></div>
+      </div>
+      <div class="d-flex row align-items-center">
+        
+        <div class="col-lg-6">
+          <img class="img-fluid" src="{{url_for('static', filename='styles/blog.png')}}" alt=""></div>
+          <div class="col-lg-6"><div id="headingGroup" class="text text-center d-flex flex-column align-items-center
+            d-lg-block mt-5">
+            <h1 class="">The whole website from navbar to delete button is dyslexic friendly</h1>
+            <div align="center">
+                <a href="/home"
+                  ><button type="button" class="btn btn-danger btn-lg">Go To Blog</button></a>
+        </div></div>
+        </div>
+    </div>
+    <div class="row align-items-center content">
+        <div class="col-md-6 order-2 order-md-1">
+            <form>
+                <div class="form-group ml-3">
+                    <label for="fname">Full Name :</label>
+                    <input class="form-control" type="text" id="name" name="fullname" placeholder="Your full name...">
+    
+                    <label for="email">Email :</label>
+                    <input class="form-control" type="text" id="email" name="email" placeholder="Your email...">
+    
+                    <label for="message">Message :</label>
+                    <textarea class="form-control textarea" id="message" rows="3" placeholder="Your message..."></textarea>
+    
+                     <button onclick="sendmail()" type="button" class="btn btn-primary mt-3">Send</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6 text-center order-1 order-md-2">
+            <div class="row justify-content-center">
+                <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                    <h2>'Dyslexia is not due to a lack of intelligence, it’s a lack of access. It’s like, if you’re dyslexic, you have all the information you need, but find it harder to process.'</h2>
+                    <button id="start" onclick="readQuote(word)" class="btn btn-success w-30 mt-3 me-3 mb-3">Audio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <!-- Check main.js for sendmail function -->
+    <!-- <script type="text/javascript" src="main.js"></script> -->
+    <script src="{{url_for('static', filename='main.js')}}"></script>
+    <script src="{{url_for('static', filename='quotes.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- <script src="quotes.js"></script> -->
+
+  </body>
+</html>
