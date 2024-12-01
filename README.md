@@ -7,6 +7,13 @@ EasyLexi is a technological solution designed to help dyslexic people overcome t
 Our true goal  will be achieved when dyslexic people find it more convenient and become more comfortable. 
 We aim at providing more features in a customised manner to our users in the future as well as developing mobile applications for the same.
 
+![EasyLexi](images/easy_lexi1.png)
+![Features](images/easy_lexi2.png)
+![Website](images/easy_lexi3.png)
+![Website](images/easy_lexi4.png)
+![Website](images/easy_lexi4.png)
+
+
 ## Fork this repository
 
 Fork this repository by clicking on the fork button on the top of this page.
